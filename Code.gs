@@ -15,7 +15,6 @@ function highlight() {
   if (selection) {
     selection.getRangeElements().forEach(function(element) {
       if (element.getElement().editAsText) {
-        
         //if only part of the text element is highlighted
         if(element.isPartial()) {
           fixPartialElement(element);
@@ -55,7 +54,6 @@ function getSelectedText(element) {
   
   //if the selection does not go to the start of the text then remove the part before it
   if(element.getStartOffset() != 0) {
-    
     selectedText = selectedText.deleteText(0, element.getStartOffset()-1); 
   }
   
@@ -79,7 +77,6 @@ function upperFirst(word) {
 }
 
 function unContraction(body) {
-  
   var apostrophes = ['’', '‘', '\'']
   
   var wholeContractions = [['it','s', 'it is'],
